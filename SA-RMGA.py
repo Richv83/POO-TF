@@ -131,6 +131,7 @@ def reportetres(rg):
         reporte_3.index, rotation=45, ha="right", rotation_mode="anchor"
     )
     reporte_3_g.legend(loc="upper right")
+    plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.3)
     plt.show()
 
 
