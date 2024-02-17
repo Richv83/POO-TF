@@ -33,7 +33,11 @@ def reporteuno(rg):
     tabla.show()
 
     reporte_1_g = reporte_1.plot(kind="barh", color="grey")
-    reporte_1_g.set_title("Cantidad de residuos totales generados anualmente")
+    reporte_1_g.set_title(
+        "Cantidad de residuos totales generados anualmente",
+        fontweight="bold",
+        loc="center",
+    )
     reporte_1_g.set_xlabel("Residuos Generados")
     reporte_1_g.set_ylabel("Año")
     reporte_1_g.set_xlim(0, 9000000)
@@ -86,7 +90,11 @@ def reportedos(rg):
     reporte_2_g.set_ylabel("")
     reporte_2_g.axis("equal")
     reporte_2_g.legend(loc="lower right")
-    reporte_2_g.set_title("Porcentaje de residuos generados por región natural")
+    reporte_2_g.set_title(
+        "Porcentaje de residuos generados por región natural",
+        fontweight="bold",
+        loc="center",
+    )
     plt.show()
 
 
@@ -109,7 +117,11 @@ def reportetres(rg):
     tabla.show()
 
     reporte_3_g = reporte_3.plot(kind="bar", color="grey", figsize=(10, 5))
-    reporte_3_g.set_title("Cantidad de residuos totales generados por departamento")
+    reporte_3_g.set_title(
+        "Cantidad de residuos totales generados por departamento",
+        fontweight="bold",
+        loc="center",
+    )
     reporte_3_g.set_xlabel("Departamento")
     reporte_3_g.set_ylabel("Residuos Generados")
     reporte_3_g.set_ylim(0, 20000000)
@@ -163,7 +175,7 @@ def reportecuatro(rg):
     )
     tabla.show()
 
-    reporte_4_sorted_top5_g = reporte_4_sorted_top5.plot(kind="barh", figsize=(10, 5))
+    reporte_4_sorted_top5_g = reporte_4_sorted_top5.plot(kind="barh", figsize=(15, 5))
     reporte_4_sorted_top5_g.set_title(
         "Top 5 mayores cantidades de residuos generados por departamento en cada año",
         fontweight="bold",
@@ -213,7 +225,7 @@ def reportecinco(rg):
     )
     tabla.show()
 
-    reporte_5_sorted_top5_g = reporte_5_sorted_top5.plot(kind="barh", figsize=(10, 5))
+    reporte_5_sorted_top5_g = reporte_5_sorted_top5.plot(kind="barh", figsize=(15, 5))
     reporte_5_sorted_top5_g.set_title(
         "Top 5 menores cantidades de residuos generados por departamento en cada año",
         fontweight="bold",
