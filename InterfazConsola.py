@@ -26,8 +26,12 @@ def reporteuno(rg):
         )
     )
 
-    reporte_1_g = reporte_1.plot(kind="barh", color="grey")
-    reporte_1_g.set_title("Cantidad de residuos totales generados anualmente")
+    reporte_1_g = reporte_1.plot(kind="barh", figsize=(15, 5))
+    reporte_1_g.set_title(
+        "Cantidad de residuos totales generados anualmente",
+        fontweight="bold",
+        loc="center",
+    )
     reporte_1_g.set_xlabel("Residuos Generados")
     reporte_1_g.set_ylabel("Año")
     reporte_1_g.set_xlim(0, 9000000)
@@ -81,7 +85,11 @@ def reportedos(rg):
     reporte_2_g.set_ylabel("")
     reporte_2_g.axis("equal")
     reporte_2_g.legend(loc="lower right")
-    reporte_2_g.set_title("Porcentaje de residuos generados por región natural")
+    reporte_2_g.set_title(
+        "Porcentaje de residuos generados por región natural",
+        fontweight="bold",
+        loc="center",
+    )
     plt.show()
 
 
@@ -104,8 +112,12 @@ def reportetres(rg):
         )
     )
 
-    reporte_3_g = reporte_3.plot(kind="bar", color="grey", figsize=(10, 5))
-    reporte_3_g.set_title("Cantidad de residuos totales generados por departamento")
+    reporte_3_g = reporte_3.plot(kind="bar", figsize=(10, 5))
+    reporte_3_g.set_title(
+        "Cantidad de residuos totales generados por departamento",
+        fontweight="bold",
+        loc="center",
+    )
     reporte_3_g.set_xlabel("Departamento")
     reporte_3_g.set_ylabel("Residuos Generados")
     reporte_3_g.set_ylim(0, 20000000)
@@ -131,6 +143,7 @@ def reportetres(rg):
         reporte_3.index, rotation=45, ha="right", rotation_mode="anchor"
     )
     reporte_3_g.legend(loc="upper right")
+    reporte_3_g.grid(axis="y", linestyle="--", alpha=0.7)
     plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.3)
     plt.show()
 
@@ -163,6 +176,31 @@ def reportecuatro(rg):
         )
     )
 
+    reporte_4_sorted_top5_g = reporte_4_sorted_top5.plot(kind="barh", figsize=(20, 5))
+    reporte_4_sorted_top5_g.set_title(
+        "Top 5 mayores cantidades de residuos generados por departamento en cada año",
+        fontweight="bold",
+        loc="center",
+    )
+    reporte_4_sorted_top5_g.set_xlabel("Residuos Generados")
+    reporte_4_sorted_top5_g.set_ylabel("Año - Departamento")
+    reporte_4_sorted_top5_g.set_xlim(0, 4000000)
+    reporte_4_sorted_top5_g.set_xticks(
+        [0, 500000, 1000000, 1500000, 2000000, 2500000, 3000000, 3500000, 4000000]
+    )
+    reporte_4_sorted_top5_g.set_xticklabels(
+        ["0", "0.5M", "1M", "1.5M", "2M", "2.5M", "3M", "3.5M", "4M"]
+    )
+    reporte_4_sorted_top5_g.bar_label(
+        reporte_4_sorted_top5_g.containers[0],
+        fmt="%.2f",
+        padding=3,
+        label_type="edge",
+        fontsize=6,
+    )
+    reporte_4_sorted_top5_g.legend(loc="upper right")
+    plt.show()
+
 
 def reportecinco(rg):
     reporte_5 = rg.pivot_table(
@@ -191,6 +229,24 @@ def reportecinco(rg):
             floatfmt=".2f",
         )
     )
+
+    reporte_5_sorted_top5_g = reporte_5_sorted_top5.plot(kind="barh", figsize=(20, 5))
+    reporte_5_sorted_top5_g.set_title(
+        "Top 5 menores cantidades de residuos generados por departamento en cada año",
+        fontweight="bold",
+        loc="center",
+    )
+    reporte_5_sorted_top5_g.set_xlabel("Residuos Generados")
+    reporte_5_sorted_top5_g.set_ylabel("Año - Departamento")
+    reporte_5_sorted_top5_g.bar_label(
+        reporte_5_sorted_top5_g.containers[0],
+        fmt="%.2f",
+        padding=3,
+        label_type="edge",
+        fontsize=6,
+    )
+    reporte_5_sorted_top5_g.legend(loc="upper right")
+    plt.show()
 
 
 def menu():
