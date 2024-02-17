@@ -1,9 +1,8 @@
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-from tabulate import tabulate
-from pandastable import Table
-import matplotlib.pyplot as plt
 import tkinter as tk
+from os import remove
+import matplotlib.pyplot as plt
 import pandas as pd
+from pandastable import Table
 
 
 def cargardatos():
@@ -190,6 +189,14 @@ def reportecinco(rg):
     tabla.show()
 
 
+def cerrar():
+    try:
+        remove("Reporte.xlsx")
+        ventana.destroy()
+    except FileNotFoundError:
+        ventana.destroy()
+
+
 # Interfaz gráfica
 ventana = tk.Tk()
 ventana.title("SA-RMGA")
@@ -268,5 +275,7 @@ boton_2.grid(row=2, column=0, pady=10)
 boton_3.grid(row=3, column=0, pady=10)
 boton_4.grid(row=4, column=0, pady=10)
 boton_5.grid(row=5, column=0, pady=10)
+
+ventana.protocol("WM_DELETE_WINDOW", cerrar)
 
 ventana.mainloop()
