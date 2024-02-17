@@ -266,7 +266,6 @@ boton_titulo = tk.Label(
     font=("Arial", 20),
     width=7,
     height=1,
-    bg="white",
     fg="black",
 )
 boton_titulo.grid(row=0, column=0, pady=10)
@@ -278,8 +277,8 @@ boton_1 = tk.Button(
     font=("Arial", 19),
     width=7,
     height=1,
-    bg="blue",
-    fg="white",
+    bg="white smoke",
+    fg="black",
 )
 
 boton_2 = tk.Button(
@@ -289,8 +288,8 @@ boton_2 = tk.Button(
     font=("Arial", 19),
     width=7,
     height=1,
-    bg="blue",
-    fg="white",
+    bg="white smoke",
+    fg="black",
 )
 
 boton_3 = tk.Button(
@@ -300,8 +299,8 @@ boton_3 = tk.Button(
     font=("Arial", 19),
     width=7,
     height=1,
-    bg="blue",
-    fg="white",
+    bg="white smoke",
+    fg="black",
 )
 
 boton_4 = tk.Button(
@@ -311,8 +310,8 @@ boton_4 = tk.Button(
     font=("Arial", 19),
     width=7,
     height=1,
-    bg="blue",
-    fg="white",
+    bg="white smoke",
+    fg="black",
 )
 
 boton_5 = tk.Button(
@@ -322,8 +321,8 @@ boton_5 = tk.Button(
     font=("Arial", 19),
     width=7,
     height=1,
-    bg="blue",
-    fg="white",
+    bg="white smoke",
+    fg="black",
 )
 
 boton_1.grid(row=1, column=0, pady=10)
