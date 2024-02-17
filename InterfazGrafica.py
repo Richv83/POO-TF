@@ -163,6 +163,31 @@ def reportecuatro(rg):
     )
     tabla.show()
 
+    reporte_4_sorted_top5_g = reporte_4_sorted_top5.plot(kind="barh", figsize=(10, 5))
+    reporte_4_sorted_top5_g.set_title(
+        "Top 5 mayores cantidades de residuos generados por departamento en cada año",
+        fontweight="bold",
+        loc="center",
+    )
+    reporte_4_sorted_top5_g.set_xlabel("Residuos Generados")
+    reporte_4_sorted_top5_g.set_ylabel("Año - Departamento")
+    reporte_4_sorted_top5_g.set_xlim(0, 4000000)
+    reporte_4_sorted_top5_g.set_xticks(
+        [0, 500000, 1000000, 1500000, 2000000, 2500000, 3000000, 3500000, 4000000]
+    )
+    reporte_4_sorted_top5_g.set_xticklabels(
+        ["0", "0.5M", "1M", "1.5M", "2M", "2.5M", "3M", "3.5M", "4M"]
+    )
+    reporte_4_sorted_top5_g.bar_label(
+        reporte_4_sorted_top5_g.containers[0],
+        fmt="%.2f",
+        padding=3,
+        label_type="edge",
+        fontsize=6,
+    )
+    reporte_4_sorted_top5_g.legend(loc="upper right")
+    plt.show()
+
 
 def reportecinco(rg):
     reporte_5 = rg.pivot_table(
@@ -187,6 +212,24 @@ def reportecinco(rg):
         editable=False,
     )
     tabla.show()
+
+    reporte_5_sorted_top5_g = reporte_5_sorted_top5.plot(kind="barh", figsize=(10, 5))
+    reporte_5_sorted_top5_g.set_title(
+        "Top 5 menores cantidades de residuos generados por departamento en cada año",
+        fontweight="bold",
+        loc="center",
+    )
+    reporte_5_sorted_top5_g.set_xlabel("Residuos Generados")
+    reporte_5_sorted_top5_g.set_ylabel("Año - Departamento")
+    reporte_5_sorted_top5_g.bar_label(
+        reporte_5_sorted_top5_g.containers[0],
+        fmt="%.2f",
+        padding=3,
+        label_type="edge",
+        fontsize=6,
+    )
+    reporte_5_sorted_top5_g.legend(loc="upper right")
+    plt.show()
 
 
 def cerrar():
