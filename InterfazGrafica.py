@@ -32,7 +32,7 @@ def reporteuno(rg):
     )
     tabla.show()
 
-    reporte_1_g = reporte_1.plot(kind="barh", color="grey")
+    reporte_1_g = reporte_1.plot(kind="barh", figsize=(15, 5))
     reporte_1_g.set_title(
         "Cantidad de residuos totales generados anualmente",
         fontweight="bold",
@@ -116,7 +116,7 @@ def reportetres(rg):
     )
     tabla.show()
 
-    reporte_3_g = reporte_3.plot(kind="bar", color="grey", figsize=(10, 5))
+    reporte_3_g = reporte_3.plot(kind="bar", figsize=(10, 5))
     reporte_3_g.set_title(
         "Cantidad de residuos totales generados por departamento",
         fontweight="bold",
@@ -147,6 +147,7 @@ def reportetres(rg):
         reporte_3.index, rotation=45, ha="right", rotation_mode="anchor"
     )
     reporte_3_g.legend(loc="upper right")
+    reporte_3_g.grid(axis="y", linestyle="--", alpha=0.7)
     plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.3)
     plt.show()
 
@@ -175,7 +176,7 @@ def reportecuatro(rg):
     )
     tabla.show()
 
-    reporte_4_sorted_top5_g = reporte_4_sorted_top5.plot(kind="barh", figsize=(15, 5))
+    reporte_4_sorted_top5_g = reporte_4_sorted_top5.plot(kind="barh", figsize=(20, 5))
     reporte_4_sorted_top5_g.set_title(
         "Top 5 mayores cantidades de residuos generados por departamento en cada año",
         fontweight="bold",
@@ -225,7 +226,7 @@ def reportecinco(rg):
     )
     tabla.show()
 
-    reporte_5_sorted_top5_g = reporte_5_sorted_top5.plot(kind="barh", figsize=(15, 5))
+    reporte_5_sorted_top5_g = reporte_5_sorted_top5.plot(kind="barh", figsize=(20, 5))
     reporte_5_sorted_top5_g.set_title(
         "Top 5 menores cantidades de residuos generados por departamento en cada año",
         fontweight="bold",
